@@ -30,7 +30,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          role-to-assume: arn:aws:iam::501894534533:role/devsecops-platform-dev-github-actions
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Login to Amazon ECR
@@ -67,7 +67,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          role-to-assume: arn:aws:iam::501894534533:role/devsecops-platform-dev-github-actions
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Deploy to ECS
