@@ -45,7 +45,12 @@ app.include_router(router)
 @app.get("/")
 async def root():
     """Root endpoint"""
-    return {"message": "DevSecOps Platform API", "version": settings.VERSION}
+    return {
+        "message": "DevSecOps Platform API",
+        "version": settings.VERSION,
+        "environment": settings.ENVIRONMENT,
+        "status": "running"
+    }
 
 
 @app.get("/health")
