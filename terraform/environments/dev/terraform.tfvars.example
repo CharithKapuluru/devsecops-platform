@@ -1,0 +1,40 @@
+# =============================================================================
+# PHASE CONTROL
+# =============================================================================
+deploy_up_to_phase = 7 # Phase 7: Security Services
+
+# =============================================================================
+# General Configuration
+# =============================================================================
+aws_region   = "us-east-1"
+project_name = "devsecops-platform"
+environment  = "dev"
+
+# GitHub (for CI/CD OIDC) - Update these with your values
+github_org  = "your-github-username"
+github_repo = "your-repo-name"
+
+# Database
+db_name               = "appdb"
+db_username           = "dbadmin"
+rds_instance_class    = "db.t3.micro"
+rds_allocated_storage = 20
+
+# ECS
+container_cpu     = 256
+container_memory  = 512
+ecs_desired_count = 1
+app_port          = 8000
+
+# SSL (optional)
+certificate_arn = ""
+
+# Monitoring
+alert_email        = "your-email@example.com"
+log_retention_days = 7
+
+# Cost Optimization
+scale_up_schedule   = "cron(0 13 ? * MON-FRI *)"
+scale_down_schedule = "cron(0 23 ? * MON-FRI *)"
+budget_limit         = "50"
+account_budget_limit = "100"
